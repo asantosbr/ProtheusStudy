@@ -6,7 +6,7 @@ User Function Variavel()
     Local cCarac := "Alexander"
     Local dData := Date()
     Local aArray := {"Alexander", "Heloísa", "Santos"}
-    Local bBloco := {|| nValor := 2, MsgAlert("O numero e: " + cValToChar(nValor), "")} // || utilizado para inserir parâmetros, mas pode ficar vazio
+    Local bBloco := {|| nValor := 2, MsgAlert("O numero e: " + cValToChar(nValor), "")} // || utilizado para inserir parametros, mas pode ficar vazio
 
     Alert(nNum)
     Alert(lLogic)

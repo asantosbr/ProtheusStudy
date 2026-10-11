@@ -12,11 +12,11 @@ User Function fBrowse()
     AAdd(aRotina, {"Excluir"    ,"U_BDeleta"    ,0,5})
     AAdd(aRotina, {"Legenda"    ,"U_BLegenda"   ,0,6})
 
-    AAdd(aCores, {"A2_TIPO == 'F'", "BR_VERDE"}) // Física
-    AAdd(aCores, {"A2_TIPO == 'J'", "BR_AMARELO"}) // Jurídica
+    AAdd(aCores, {"A2_TIPO == 'F'", "BR_VERDE"}) // Fisica
+    AAdd(aCores, {"A2_TIPO == 'J'", "BR_AMARELO"}) // Juridica
     AAdd(aCores, {"A2_TIPO == 'X'", "BR_LARANJA"}) // Outros
     AAdd(aCores, {"A2_TIPO == 'R'", "BR_MARROM"}) // Fornecedor Rural
-    AAdd(aCores, {"EMPTY(A2_TIPO)", "BR_PRETO"}) // Não classificado
+    AAdd(aCores, {"EMPTY(A2_TIPO)", "BR_PRETO"}) // Nao classificado
 
     DBSelectArea(cAlias)
         DBSetOrder(1)
@@ -24,7 +24,7 @@ User Function fBrowse()
         Eval(bFiltraBrw)
         
         DBGoTop()
-        MBrowse(6, 1, 22, 75, cAlias,,,,,, aCores) // acessar documentação para entender as ,
+        MBrowse(6, 1, 22, 75, cAlias,,,,,, aCores) // acessar documentacao para entender as ,
 
         EndFilBrw(cAlias, aIndexSA2)
     
@@ -32,8 +32,8 @@ User Function fBrowse()
 
 Return
 
-// Todo dado que é registrado no BD do Protheus precisa do registro (chave primária, chamada de R_e_c_n_o). Abaixo, representado por nReg
-// nOpc é a opção: 1 = Pesquisar, 2 = Visualizar, 3 = Incluir, 4 = Alterar, 5 = Deletar, 6 = Outras ações
+// Todo dado que e registrado no BD do Protheus precisa do registro (chave primaria, chamada de R_e_c_n_o). Abaixo, representado por nReg
+// nOpc � a opcao: 1 = Pesquisar, 2 = Visualizar, 3 = Incluir, 4 = Alterar, 5 = Deletar, 6 = Outras acoes
 User Function BInclui(cAlias, nReg, nOpc)
     Local nOpcao := 0
     nOpcao := AxInclui(cAlias, nReg, nOpc)
@@ -81,6 +81,6 @@ User Function BLegenda()
     AAdd(aLegenda, {"BR_MARROM", "Produtor rural"})
     AAdd(aLegenda, {"BR_PRETO", "Nao classificado"})
 
-    BrwLegenda(cCadastro, "Legenda", aLegenda) // Recebe o nome da tela, o título e as opções
+    BrwLegenda(cCadastro, "Legenda", aLegenda) // Recebe o nome da tela, o ti�tulo e as opcoes
 
 Return

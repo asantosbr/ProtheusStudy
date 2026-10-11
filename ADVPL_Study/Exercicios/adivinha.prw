@@ -8,7 +8,7 @@ Static Function cMsg(cP1)
 Return MsgInfo(cMensagem, 'Niveis do jogo')
 
 User Function Adivinha()
-    Local nChute := 0, nTentativas := 0, nRaspadinha := 1 //  O maior número que será gerado menos um.
+    Local nChute := 0, nTentativas := 0, nRaspadinha := 1 //  O maior numero que sera gerado menos um.
     Local cNivel := '', cRange := ''
 
     cMsg(cNivel)
@@ -34,7 +34,7 @@ User Function Adivinha()
     EndIf
 
     While nRaspadinha != nChute
-        nChute := Val(FWInputBox('Digite um numero: ' + cRange, '')) // Val converte uma sequência de caracteres que contêm dígitos em um valor numérico.
+        nChute := Val(FWInputBox('Digite um numero: ' + cRange, '')) // Val converte uma sequencia de caracteres que contem di�gitos em um valor numerico.
         nTentativas += 1
         If (nChute = nRaspadinha) 
             If nTentativas = 1

@@ -14,9 +14,9 @@ Return nIdade
     Primeira Classe AdvPL
 /*/
 
-// z porque é customizado
+// z porque e customizado
 Class ClassZPessoa
-// Todos os atributos começam com Data
+// Todos os atributos comecam com Data
 // ATRIBUTOS
     Data cNome
     Data dNascimento
@@ -25,8 +25,8 @@ Class ClassZPessoa
 // CONSTRUTOR
     Method New() CONSTRUCTOR
 
-// MÉTODOS
-    Method MostrarIdade() // O método deve ser criado fora da classe?
+// METODOS
+    Method MostrarIdade() // O metodo deve ser criado fora da classe?
     
 EndClass
 

@@ -5,6 +5,6 @@ User Function SomaNumeros()
     Local nNum2 := 20
     Local nResultado := nNum1 + nNum2
 
-    Alert("O resultado da soma é: " + Str(nResultado))
+    Alert("O resultado da soma e: " + Str(nResultado))
 
 Return

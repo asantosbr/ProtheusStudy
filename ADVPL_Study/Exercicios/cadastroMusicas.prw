@@ -5,7 +5,7 @@
 */
 User Function CadZZA()
     Local cAlias := "ZZA", cTitulo := "Cadastro de musicas"
-    Local cVldExc := ".T.", cVldAlt := ".T." // Validação para Exclusão e Validação para Alteração
+    Local cVldExc := ".T.", cVldAlt := ".T." // Validacao para Exclusao e Validacao para Alteracao
 
     AxCadastro(cAlias, cTitulo, cVldExc, cVldAlt)
 

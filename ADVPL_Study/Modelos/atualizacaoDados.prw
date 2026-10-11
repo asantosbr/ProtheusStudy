@@ -9,6 +9,6 @@ User Function CadTela1()
     Local cVldExc := .T., cVldAlt := .T.
     Private cTitulo := 'Cadastro Produtos - Minha tela AXCadastro'
 
-    AXCadastro(cAlias, cTitulo, cVldExc, cVldAlt) // cria uma tela. Os dois √∫ltimos par√¢metros permitem a exclus√£o e a altera√ß√£o da tabela SB1 (produtos) quando for true
+    AXCadastro(cAlias, cTitulo, cVldExc, cVldAlt) // cria uma tela. Os dois ultimos parametros permitem a exclus„o e a alteraÁ„o da tabela SB1 (produtos) quando for true
 
 Return Nil
