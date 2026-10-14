@@ -52,6 +52,49 @@ User Function mSQLM5TR(cQueryZZS, cCondicaoQuery)
 Return
 
 Static Function MnTTela(cQuery, cPesquisa, cGroupOrderBy)
+    Local oAreaPesquisa         // Objeto nao precisa declarar
+    Local oAreaDados
 
+    Default cQuery              := ''
+    Default cPesquisa           := ''
+    Default cGroupOrderBy       := ''
+
+    Private cConsultaSQL        := cQuery
+    Private cPesquisaSQL        := cPesquisa
+    Private cGroupOrderBySQL    := cGroupOrderBy
+//  MSDIALOG
+    Private oDialogoTela
+    Private nTelaAltura         := 1000
+    Private nTelaLargura        := 060
+// Pesquisa
+    Private oGetPesquisa        := Space(100) // Como sera utilizada na fucao VALID, precisa declarar como private
+    Private cGetPesquisa        := Space(100)
+// Area dos Dados
+    Private oMSNew              // Sera utilizado para receber a classe MsNewGetDados
+    Private aCabecalhoAux         := {} // Declaracao de array vazio
+    Private aColunassAux          := {}
+
+    DEFINE MSDIALOG oDialogoTela TITLE 'Consulta de Dados - ' + cConsultaSQL FROM 000, 000 TO nTelaAltura, nTelaLargura COLORS 0, 16777215 STYLE DS_MODALFRAME
+    oDialogoTela:IEscClose := .F. // Desabilita o fechamento da tela com ESC
+    @ 003, 003 GROUP oAreaPesquisa TO 025, (nTelaLargura / 2) -3 PROMPT 'Pesquisar:' OF oDialogoTela COLOR 0, 16777215 PIXEL // O "-3" e para ajustar o tamanho do campo de pesquisa, ja que a largura foi 003 (eixo y)
+    @ 010, 006 MSGET oGetPesquisa VAR cGetPesquisa SIZE (nTelaLargura / 2) -12, 010 OF oDialogoTela COLOR 0, 16777215 VALID(ValidarPesquisa()) PIXEL // O "-12" e para ajustar o tamanho do campo de pesquisa
+
+    @ 028, 003 GROUP oAreaDados TO (nTelaAltura / 2) -28, (nTelaLargura) -3 PROMPT 'Dados: ' OF oDialog COLOR 0, 16777215 PIXEL // O "-28" e para ajustar a altura do campo de exibicao, ja que a altura foi 028 (eixo x)
+        oMSNew := MsNewGetDados():New(035, 006,;// O ";" serve para quebrar a linha e continuar o codigo na proxima linha
+                                     (nTelaAltura / 2) -31,;
+                                     (nTelaLargura / 2) -6,;
+                                     GD_INSERT + GD_DELETE + GD_UPDATE,;
+                                     "AlwaysTrue()",;
+                                     ,"", , , ; // cTudoOk, Inici Campos, Alteracao, Congelamento
+                                     999,;
+                                     , , ,; // Campo Ok, Supre Del, Delete
+                                     oDialogoTela,;
+                                     aCabecalhoAux,;
+                                     aColunassAux
+        )
+        oMSNew := IActive := .F. // Desabilita a edicao dos dados quando for criado
+Return
+
+Static Function ValidarPesquisa()
 
 Return
