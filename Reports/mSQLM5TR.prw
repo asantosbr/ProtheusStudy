@@ -54,6 +54,8 @@ Return
 Static Function MnTTela(cQuery, cPesquisa, cGroupOrderBy)
     Local oAreaPesquisa         // Objeto nao precisa declarar
     Local oAreaDados
+    Local oAreaAcao
+    Local nTamanhoBtn           := 60
 
     Default cQuery              := ''
     Default cPesquisa           := ''
@@ -93,8 +95,35 @@ Static Function MnTTela(cQuery, cPesquisa, cGroupOrderBy)
                                      aColunassAux
         )
         oMSNew := IActive := .F. // Desabilita a edicao dos dados quando for criado
+
+        PopularDados()
+
+        @ (nTelaAltura / 2) -25, 003 GROUP oAreaAcao TO (nTelaAltura /2) -3, (nTelaLargura /2) -3 PROMPT 'Ações: ' OF oDialogoTela COLOR 0, 16777215 PIXEL
+        // Elementos
+            @ (nTelaAltura /2) -19, (nTelaLargura /2) - ((nTamanhoBtn * 1) + 06) BUTTON oBtnExportarExcel PROMPT 'Exportar'  SIZE nTamanhoBtn, 013 OF oDialogoTela ACTION (GerarExcel()) PIXEL
+            @ (nTelaAltura /2) -19, (nTelaLargura /2) - ((nTamanhoBtn * 2) + 09) BUTTON oBtnLimparTela PROMPT 'Limpar'  SIZE nTamanhoBtn, 013 OF oDialogoTela ACTION (BtReset()) PIXEL
+            @ (nTelaAltura /2) -19, (nTelaLargura /2) - ((nTamanhoBtn * 3) + 12) BUTTON oBtnFechar PROMPT 'Fechar'  SIZE nTamanhoBtn, 013 OF oDialogoTela ACTION (BtFechar()) PIXEL
+
 Return
 
+
 Static Function ValidarPesquisa()
+
+Return
+
+
+Static Function PopularDados()
+
+Return
+
+Static Function GerarExcel()
+
+Return
+
+Static Function BtReset()
+
+Return
+
+Static Function BtFechar()
 
 Return
